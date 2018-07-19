@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.billy.searchsidebar.model.SideBarModel" />
+
+        <variable
+            name="listener"
+            type="com.billy.searchsidebar.adapter.RecyclerItemClick" />
+
+        <variable
+            name="list"
+            type="android.databinding.ObservableArrayList&lt;SideBarModel>" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="selectIndex"
+            type="String"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:items="@{list}"
+            app:listener="@{listener}"
+            app:Items="@{list}"
+            app:selectIndex="@{selectIndex}"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <com.billy.searchsidebar.view.WaveSideBar
+            android:id="@+id/side_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            app:sidebar_text_color="#8D6E63" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

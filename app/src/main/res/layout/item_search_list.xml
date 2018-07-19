@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.billy.searchsidebar.model.SideBarModel" />
+
+        <variable
+            name="previousIndex"
+            type="String" />
+
+        <variable
+            name="listener"
+            type="com.billy.searchsidebar.adapter.RecyclerItemClick" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexDirection="column">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="#fff0f0f0"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:text="@{model.index}"
+            android:textColor="#b7b7b7"
+            android:textSize="14dp"
+            android:visibility="@{model.index.equals(previousIndex) ? View.GONE : View.VISIBLE}"
+            tool:text="A" />
+
+        <TextView
+            android:onClick="@{()->listener.onItemClick(model)}"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="17dp"
+            android:textColor="#ff404040"
+            android:textSize="14dp"
+            android:text="@{model.name}"
+            tool:text="压疮危险评估"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:background="#fff0f0f0" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>

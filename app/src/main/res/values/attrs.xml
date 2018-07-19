@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="sideBar">
+        <attr name="sidebar_text_size" format="dimension"/>
+        <attr name="sidebar_text_color" format="color"/>
+        <!--false  监听有效,true 则反之-->
+        <attr name="sidebar_lazy_respond" format="boolean"/>
+        <!--最大偏移-->
+        <attr name="sidebar_max_offset" format="dimension"/>
+        <!--控件位置-->
+        <attr name="sidebar_position" format="enum">
+            <enum name="right" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+        <!--字母位置-->
+        <attr name="sidebar_text_alignment" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1" />
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>
