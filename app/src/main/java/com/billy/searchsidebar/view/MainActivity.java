@@ -3,14 +3,18 @@ package com.billy.searchsidebar.view;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableArrayList;
 import android.databinding.ViewDataBinding;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 
 import com.billy.searchsidebar.R;
 import com.billy.searchsidebar.adapter.RecyclerItemClick;
 import com.billy.searchsidebar.databinding.ActivityMainBinding;
 import com.billy.searchsidebar.model.SideBarModel;
+import com.billy.searchsidebar.utils.NumberUtils;
 import com.billy.searchsidebar.viewmodel.MainViewModel;
 
 import io.reactivex.functions.Consumer;
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
         mBinding.setOnClick(this);
         mBinding.setListener(this);
         mBinding.sideBar.setOnSelectIndexItemListener(this);
+//        mBinding.AppBarLayout.addOnOffsetChangedListener(new ScrollListenr());
     }
 
     private void initData() {
@@ -58,4 +63,16 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
     public void onClick(View v) {
 
     }
+
+
+    /**
+     * appBarLayout 滚动监听
+     */
+//    class ScrollListenr implements AppBarLayout.OnOffsetChangedListener {
+//
+//        @Override
+//        public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//
+//        }
+//    }
 }

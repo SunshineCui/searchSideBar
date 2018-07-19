@@ -21,7 +21,7 @@
 
         <variable
             name="selectIndex"
-            type="String"/>
+            type="String" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -29,17 +29,38 @@
         android:layout_height="match_parent">
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_main"
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:items="@{list}"
-            app:listener="@{listener}"
-            app:Items="@{list}"
-            app:selectIndex="@{selectIndex}"
-            >
+            android:layout_height="match_parent">
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/AppBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="搜索" />
+            </android.support.design.widget.AppBarLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:id="@+id/rv_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:Items="@{list}"
+                app:items="@{list}"
+                app:listener="@{listener}"
+                app:selectIndex="@{selectIndex}">
+            </android.support.v7.widget.RecyclerView>
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
 
         <com.billy.searchsidebar.view.WaveSideBar
             android:id="@+id/side_bar"
